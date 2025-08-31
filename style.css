@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#000;
+    --secondary-color:#00ffff;
+    --bg-color:#000;
+}
+body{
+    position: relative;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    font-family: monospace;
+    background: var(--bg-color);
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.card{
+    max-width: 356px;
+    max-height:600px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 13px var(--secondary-color);
+    -webkit-backdrop-filter: blur(4px);
+}
+.image-profile{
+    max-width: 244px;
+    max-height: 244px;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 1px var(--secondary-color);
+    animation: fadeInBottom 1s ease forwards;
+}
+.name{
+    opacity: 0;
+    font-size: 2rem;
+    overflow: hidden;
+    animation: fadeInRight .5s ease-in forwards;
+}
+.title{
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 100;
+    opacity: 0;
+    background: linear-gradient(90deg, var(--primary-color),var(--secondary-color));
+    animation: fadeInUp .6s ease-in forwards;
+    animation-delay: 200ms;
+}
+.links{
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.links a{
+    background: linear-gradient(45deg, var(--primary-color),var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    margin: 10px;
+    opacity: 0;
+    transition: all;
+    animation: fadeInUp .8s ease forwards;
+}
+.links a img{
+    max-width: 48px;
+    max-height: 48px;
+}
+.links a:nth-child(1){
+    animation-delay: 200ms;
+}
+.links a:nth-child(2){
+    animation-delay: 400ms;
+}
+.links a:nth-child(3){
+    animation-delay: 600ms;
+}
+.links a:nth-child(4){
+    animation-delay: 800ms;
+}
+.download-cv{
+    text-decoration: none;
+     background: linear-gradient(45deg, var(--primary-color),var(--secondary-color));
+    color: var(--secondary-color);
+    font-size: 1rem;
+    box-shadow: 0 0 3px var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeInLeft .8s ease forwards;
+}
+.star{
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    animation: pulsar 2s ease-in-out infinite;
+}
+@keyframes pulsar{
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+@keyframes opacity{
+    0%{
+        opacity: 0;
+        filter: blur(0px);
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(200%);
+        filter: blur(4px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(200%);
+        filter: blur(4px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0px);
+        
+    }
+}
+
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-200%);
+        filter: blur(4px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0px);
+    }
+}
+
+@keyframes fadeInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(-200%);
+        filter: blur(4px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}
